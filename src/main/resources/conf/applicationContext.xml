@@ -1,0 +1,75 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <context:annotation-config />
+
+
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <!-- 用file的方式配置在jar包外 -->
+                <!--<value>file:conf/dbconfig.properties</value>-->
+                <!--<value>file:conf/settings.properties</value>-->
+                <!--<value>classpath:conf/dbconfig.properties</value>-->
+                <value>classpath:conf/settings.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">-->
+        <!--<property name="driverClass" value="${jdbc.driver}" />-->
+        <!--<property name="jdbcUrl" value="${jdbc.url}" />-->
+        <!--<property name="username" value="${jdbc.username}" />-->
+        <!--<property name="password" value="${jdbc.password}" />-->
+    <!--</bean>-->
+
+	<!--&lt;!&ndash; jedis pool配置 &ndash;&gt;-->
+	<!--<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">-->
+		<!--<property name="maxTotal" value="${redis.maxTotal}" />-->
+		<!--<property name="maxIdle" value="${redis.maxIdle}" />-->
+		<!--<property name="maxWaitMillis" value="${redis.maxWaitMillis}" />-->
+		<!--<property name="testOnBorrow" value="${redis.testOnBorrow}" />-->
+	<!--</bean>-->
+	  <!---->
+	<!--&lt;!&ndash; Redis Connection Factory &ndash;&gt;-->
+	<!--<bean id="jedisConnFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"> -->
+		<!--<property name="poolConfig" ref="jedisPoolConfig"></property>  -->
+        <!--<property name="hostName" value="${redis.host}"></property>  -->
+        <!--<property name="port" value="${redis.port}"></property>  -->
+        <!--<property name="password" value="${redis.password}"></property> -->
+        <!--<property name="timeout" value="${redis.timeout}"></property>  -->
+        <!--<property name="database" value="0"></property>  -->
+	<!--</bean>-->
+
+	<!--<bean id="jedisConnFactory1" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"> -->
+		<!--<property name="poolConfig" ref="jedisPoolConfig"></property>  -->
+        <!--<property name="hostName" value="${redis.host}"></property>  -->
+        <!--<property name="port" value="${redis.port}"></property>  -->
+        <!--<property name="password" value="${redis.password}"></property> -->
+        <!--<property name="timeout" value="${redis.timeout}"></property>  -->
+         <!--<property name="database" value="1"></property> -->
+	<!--</bean>-->
+
+    <!--&lt;!&ndash; cache redis conn factory &ndash;&gt;-->
+    <!--<bean id="cacheJedisConnFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">-->
+        <!--<property name="poolConfig" ref="jedisPoolConfig"></property>-->
+        <!--<property name="hostName" value="${redis.host}"></property>-->
+        <!--<property name="port" value="${redis.port}"></property>-->
+        <!--<property name="password" value="${redis.password}"></property>-->
+        <!--<property name="timeout" value="${redis.timeout}"></property>-->
+        <!--<property name="database" value="2"></property>-->
+    <!--</bean>-->
+
+
+    <!--<import resource="classpath:conf/pintimes-spring-dao.xml"/>-->
+    <import resource="classpath:conf/pintimes-spring-sprider.xml"/>
+
+
+
+</beans>

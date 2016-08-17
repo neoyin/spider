@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="LOG_DIR" value="/usr/local/tomcat/logs/" />
+    <property name="APP_NAME" value="lifeix-pintimes-wspider" />
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_DIR}${APP_NAME}.log</file>
+
+        <encoder>
+            <pattern>%-20(%d{yyy-MM-dd HH:mm:ss.SSS} [%thread]) %-5level %logger{80} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-20(%d{yyy-MM-dd HH:mm:ss.SSS} [%thread]) %-5level %logger{80} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <!--<logger name="org.springframework.beans" level="WARN" />-->
+    <!--<logger name="org.apache.commons" level="WARN" />-->
+    <logger name="httpclient.wire" level="WARN" />
+    <!--<logger name="org.springframework.web.servlet" level="WARN" />-->
+    <logger name="org.apache.http.wire" level="WARN"/>
+    <logger name="org.apache.http.headers" level="WARN" />
+    <logger name="org.apache.commons.httpclient" level="WARN" />
+    <logger name="org.mybatis.spring.transaction" level="WARN"/>
+</configuration>
