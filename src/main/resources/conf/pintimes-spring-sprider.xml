@@ -26,18 +26,4 @@
        </bean>
 
 
-       <!--<bean id="imageService" class="com.lifeix.pintimes.spider.imgstore.ImgServiceImpl">-->
-              <!--<property name="client" ref="imgClient"></property>-->
-              <!--<property name="imgPrefix" value="${imgCommon.imgPrefix}"/>-->
-              <!--<property name="bucketName" value="${imgClient.bucketName}"/>-->
-              <!--<property name="tempImgPath" value="${db.image.path}" />-->
-       <!--</bean>-->
-
-       <!--<bean id="imgClient" class="com.aliyun.oss.OSSClient">-->
-              <!--<constructor-arg index="0" type="java.lang.String" value="${imgClient.endpoint}"></constructor-arg>-->
-              <!--<constructor-arg index="1" type="java.lang.String" value="${imgClient.accessKeyId}"></constructor-arg>-->
-              <!--<constructor-arg index="2" type="java.lang.String" value="${imgClient.secretAccessKey}" ></constructor-arg>-->
-       <!--</bean>-->
-
-
 </beans>

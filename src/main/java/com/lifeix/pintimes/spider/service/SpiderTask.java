@@ -1,5 +1,7 @@
 package com.lifeix.pintimes.spider.service;
 
+import com.l99.common.utils.JsoupUtil;
+import com.l99.common.utils.ResolveTextObject;
 import com.l99.exception.service.L99IllegalOperateException;
 import com.lifeix.pintimes.spider.bean.SpiderConfig;
 import com.lifeix.pintimes.spider.bean.SpiderContent;
@@ -67,19 +69,20 @@ public class SpiderTask implements Runnable {
     public void spiderPage(String url){
         SpiderParse parse = new SpiderParse(config);
         SpiderContent data = parse.productionLine(url);
-        //System.out.println(data+"\n"+config);
-        //SpiderStore.saveContent(data);
+        System.out.println(data+"\n"+config);
         SpiderDoveStore store = new SpiderDoveStore(data,config);
         try {
             store.saveContent();
         } catch (L99IllegalOperateException e) {
            LOGGER.debug(e.getMessage(),e);
         }
+        System.out.println("===========");
+
+
     }
 
 
     public void run() {
-
 
         System.out.println(config.getHomePage()+"--"+Thread.currentThread()+"--"+ new Date());
         //BerkeleyDBUtil.getInstance.openDB(config.getHomePage());

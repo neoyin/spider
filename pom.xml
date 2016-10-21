@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.lifeix.pintimes</groupId>
-    <artifactId>lifeix-pintimes-wsprider</artifactId>
+    <artifactId>lifeix-spider-bed</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -50,19 +50,36 @@
             <artifactId>commons-configuration</artifactId>
             <version>1.9</version>
         </dependency>
+        <dependency>
+            <groupId>com.lifeix</groupId>
+            <artifactId>lifeix-common-client</artifactId>
+            <version>0.0.35.66</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.lifeix</groupId>
+                    <artifactId>lifeix-jsoup</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.7.3</version>
+        </dependency>
         <!-- ali yun -->
-        <dependency>
-            <groupId>com.aliyun.oss</groupId>
-            <artifactId>aliyun-sdk-oss</artifactId>
-            <version>2.0.3</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.aliyun.oss</groupId>-->
+            <!--<artifactId>aliyun-sdk-oss</artifactId>-->
+            <!--<version>2.0.3</version>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>com.lifeix.pintimes</groupId>
-            <artifactId>lifeix-pintimes-dao</artifactId>
-            <version>1.1-SNAPSHOT</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.lifeix.pintimes</groupId>-->
+            <!--<artifactId>lifeix-pintimes-dao</artifactId>-->
+            <!--<version>1.1-SNAPSHOT</version>-->
+        <!--</dependency>-->
         <!--dovebox-->
         <dependency>
             <groupId>com.lifeix</groupId>

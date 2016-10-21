@@ -3,6 +3,7 @@ package com.lifeix.pintimes.spider.service;
 import com.lifeix.pintimes.spider.ContextManager;
 import com.lifeix.pintimes.spider.bean.SpiderConfig;
 import com.lifeix.pintimes.spider.bean.SpiderContent;
+import com.lifeix.pintimes.spider.imgstore.ImageBedService;
 import com.lifeix.pintimes.spider.imgstore.ImageDoveboxServiceImpl;
 import com.lifeix.pintimes.spider.imgstore.ImgService;
 import com.lifeix.pintimes.spider.util.SpiderUtils;
@@ -31,8 +32,8 @@ public class SpiderParse {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SpiderParse.class);
 
-    //private static ImgServiceImpl imgService = (ImgServiceImpl) ContextManager.getContext().getBean("imageService");
-    private static ImgService imgService = (ImageDoveboxServiceImpl) ContextManager.getContext().getBean("doveboxImgService");
+    private static ImgService imgService = (ImageBedService) ContextManager.getContext().getBean("bedImageService");
+    //private static ImgService imgService = (ImageDoveboxServiceImpl) ContextManager.getContext().getBean("doveboxImgService");
 
 
     static Whitelist list = Whitelist.basicWithImages();
@@ -52,7 +53,7 @@ public class SpiderParse {
         //过滤内容
         data = filterContent(data);
         //将图片下载上传到服务器并替换image地址
-        data = replaceImgs(data);
+        //data = replaceImgs(data);
         //提取摘要
         data = contentExtractor(data);
         double weight = WeightMathUtil.contentLengthWeight(data.getWeight(),data.getPost_content().length());

@@ -15,9 +15,9 @@
             <list>
                 <!-- 用file的方式配置在jar包外 -->
                 <!--<value>file:conf/dbconfig.properties</value>-->
-                <!--<value>file:conf/settings.properties</value>-->
+                <value>file:conf/settings.properties</value>
                 <!--<value>classpath:conf/dbconfig.properties</value>-->
-                <value>classpath:conf/settings.properties</value>
+                <!--<value>classpath:conf/settings.properties</value>-->
             </list>
         </property>
     </bean>
